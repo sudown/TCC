@@ -1,6 +1,5 @@
 \documentclass[12pt]{article}
 \usepackage{ArtigoIFPE}
-% --- Adicionando o arquivo de bibliografia ---
 \addbibresource{referencias.bib}
 
 % --- INFORMAÇÕES DO TRABALHO ---
@@ -14,7 +13,7 @@
 
 \campus{Belo Jardim}
 \curso{de Bacharelado em Engenharia de Software} 
-\data{11 de julho de 2025}
+\data{14 de setembro de 2025}
 
 \begin{document}
 
@@ -22,34 +21,38 @@
 
 \thispagestyle{plain}
 
-% --- RESUMO E PALAVRAS-CHAVE ---
+% --- RESUMO E ABSTRACT (reescritos no tempo passado) ---
 \section*{Resumo}
-\noindent O crescente número de ameaças cibernéticas, com destaque para os ataques de phishing, representa um risco significativo para a segurança de dados de usuários e empresas. Este trabalho propõe o desenvolvimento e a avaliação de modelos de Machine Learning como uma abordagem para a detecção automática e inteligente de websites de phishing. O objetivo geral é comparar a eficácia dos algoritmos de classificação Random Forest e Support Vector Machine (SVM) na identificação de URLs maliciosas. A metodologia será baseada em uma abordagem quantitativa, utilizando um dataset público da plataforma Kaggle. Os dados serão pré-processados e analisados, para então servirem de base para o treinamento e teste dos modelos. A avaliação será conduzida por meio de métricas de desempenho como acurácia, precisão e recall. Espera-se, ao final, determinar qual dos modelos apresenta maior eficácia para o problema proposto, contribuindo para o avanço das pesquisas em segurança da informação.
+\noindent O crescente número de ameaças cibernéticas, com destaque para os ataques de phishing, representa um risco significativo para a segurança de dados de usuários e empresas. Este trabalho desenvolveu e avaliou modelos de Machine Learning como uma abordagem para a detecção automática e inteligente de websites de phishing. O objetivo foi comparar a eficácia dos algoritmos de classificação Random Forest e Support Vector Machine (SVM) na identificação de URLs maliciosas. A metodologia foi baseada em uma abordagem quantitativa, utilizando um dataset público da plataforma Kaggle. Os dados foram pré-processados e analisados, servindo de base para o treinamento e teste dos modelos. Os resultados demonstraram que o modelo Random Forest alcançou uma acurácia de 98.20\%, superando significativamente o desempenho do SVM, que obteve 86.35\%. Concluiu-se que, para o conjunto de dados e as condições avaliadas, o Random Forest é uma abordagem mais robusta e eficaz para o problema proposto, contribuindo para o avanço das pesquisas em segurança da informação.
 
-\palavraschave{Segurança da Informação. Phishing. Machine Learning. Classificação de Dados.}
+\palavraschave{Segurança da Informação. Phishing. Machine Learning. Random Forest.}
 
 \section*{Abstract}
-\noindent The increasing number of cybersecurity threats, especially phishing attacks, poses a significant risk to the data security of users and companies. This work proposes the development and evaluation of Machine Learning models as an approach for the automatic and intelligent detection of phishing websites. The main objective is to compare the effectiveness of the Random Forest and Support Vector Machine (SVM) classification algorithms in identifying malicious URLs. The methodology will be based on a quantitative approach, using a public dataset from the Kaggle platform. The data will be pre-processed and analyzed to serve as a basis for training and testing the models. The evaluation will be conducted using performance metrics such as accuracy, precision, and recall. It is expected, ultimately, to determine which of the models shows greater effectiveness for the proposed problem, contributing to the advancement of research in information security.
+\noindent The increasing number of cybersecurity threats, especially phishing attacks, poses a significant risk to the data security of users and companies. This work developed and evaluated Machine Learning models as an approach for the automatic and intelligent detection of phishing websites. The objective was to compare the effectiveness of the Random Forest and Support Vector Machine (SVM) classification algorithms in identifying malicious URLs. The methodology was based on a quantitative approach, using a public dataset from the Kaggle platform. The data was pre-processed and analyzed to serve as a basis for training and testing the models. The results demonstrated that the Random Forest model achieved an accuracy of 98.20\%, significantly outperforming the SVM model, which obtained 86.35\%. It was concluded that, for the dataset and conditions evaluated, Random Forest is a more robust and effective approach for the proposed problem, contributing to the advancement of research in information security.
 
-\keywords{Information Security. Phishing. Machine Learning. Data Classification.}
+\keywords{Information Security. Phishing. Machine Learning. Random Forest.}
 
 \vspace*{20pt} \hrule height 1.5pt
 
-% --- CORPO DO PRÉ-PROJETO ---
+% --- CORPO DO TCC FINAL ---
 
 \section{Introdução}
 
+% [TODO: Revisar este texto, mas ele já está 90% pronto do pré-projeto]
 A onipresença da internet transformou a sociedade, mas também introduziu novas vulnerabilidades. Dentre as ameaças cibernéticas, o \textit{phishing} se destaca como um dos ataques mais prevalentes e danosos, visando enganar usuários para que revelem informações sensíveis, como credenciais de acesso e dados financeiros. A crescente sofisticação destes ataques torna a detecção manual insuficiente, criando uma demanda por soluções automáticas e inteligentes.
 
 Neste contexto, o Machine Learning (ML) surge como uma abordagem promissora \parencite{hastie2009elements}. Ao treinar algoritmos para reconhecerem os padrões característicos de URLs maliciosas, é possível desenvolver ferramentas capazes de identificar ameaças em tempo real com alta precisão, como demonstrado em estudos recentes na área \parencite{mandadi2022}.
 
 \subsection{Justificativa}
+% [TODO: Esta seção geralmente se mantém igual ao pré-projeto.]
 A relevância deste trabalho reside no potencial de mitigar os impactos negativos do phishing. A criação de modelos de detecção eficazes contribui diretamente para a segurança de usuários, a proteção da reputação de empresas e a redução de perdas financeiras. Academicamente, a pesquisa avança o estado da arte ao comparar algoritmos específicos para este problema, gerando conhecimento aplicável tanto no meio industrial quanto no científico.
 
 \subsection{Problema de Pesquisa}
+% [TODO: Esta seção geralmente se mantém igual ao pré-projeto.]
 A questão central que norteia este trabalho é: De que forma e com qual eficácia os algoritmos de Machine Learning, especificamente Random Forest e Support Vector Machine, podem ser aplicados para a detecção automática de websites de phishing com base em características de suas URLs?
 
 \subsection{Objetivos}
+% [TODO: Esta seção geralmente se mantém igual ao pré-projeto.]
 \subsubsection{Objetivo Geral}
 Desenvolver e avaliar a performance de modelos de Machine Learning para a detecção de websites de phishing.
 
@@ -64,58 +67,86 @@ Desenvolver e avaliar a performance de modelos de Machine Learning para a detec�
 
 \section{Fundamentação Teórica}
 \label{sec:fundamentacao}
+% [TODO: Escrever este capítulo com base na sua pesquisa. Use subseções.]
+\subsection{Phishing: Conceitos e Técnicas}
+% [TODO: Explicar o que é phishing, como funciona, tipos de phishing, etc.]
 
-Esta seção irá aprofundar os conceitos que servem de alicerce para o trabalho. Será abordada a natureza dos ataques de \textit{phishing}, detalhando suas técnicas e características mais comuns. Em seguida, serão apresentados os fundamentos do Machine Learning, com foco em Aprendizado Supervisionado e no problema de Classificação, tendo como base a obra de \textcite{hastie2009elements}. Por fim, será realizada uma explanação conceitual sobre o funcionamento dos algoritmos selecionados e uma revisão de trabalhos correlatos, como o estudo de \textcite{mandadi2022}, que aplicaram técnicas similares para a detecção de phishing.
+\subsection{Machine Learning e Aprendizado Supervisionado}
+% [TODO: Explicar os conceitos básicos de ML, focando em classificação.]
+
+\subsection{Algoritmos de Classificação}
+% [TODO: Explicar de forma conceitual como o Random Forest e o SVM funcionam.]
+
+\subsection{Trabalhos Correlatos}
+% [TODO: Resumir 2 ou 3 artigos que fizeram algo parecido com o seu trabalho, como o de Mandadi et al. (2022).]
 
 
-\section{Metodologia Preliminar}
+\section{Metodologia}
 \label{sec:metodologia}
-
-Este trabalho seguirá uma abordagem de pesquisa quantitativa e experimental. A metodologia será dividida nas seguintes etapas:
+% [TODO: Revisar este texto, que foi adaptado do pré-projeto para o tempo passado.]
+Este trabalho seguiu uma abordagem de pesquisa quantitativa e experimental. A metodologia foi dividida nas seguintes etapas:
 
 \begin{enumerate}
-    \item \textbf{Fonte de Dados:} Será utilizado o dataset público ``Phishing Dataset for Machine Learning'' \parencite{kaggle_dataset_2022}. Este conjunto de dados contém um vasto número de amostras e características já extraídas de URLs, as quais são previamente classificadas como phishing ou legítimas.
+    \item \textbf{Fonte de Dados:} Foi utilizado o dataset público ``Phishing Dataset for Machine Learning'' \parencite{kaggle_dataset_2022}, cuja base original foi apresentada por \textcite{mandadi2022}. Este conjunto de dados contém um vasto número de amostras e características já extraídas de URLs, as quais são previamente classificadas como phishing ou legítimas.
 
-    \item \textbf{Ferramentas:} O desenvolvimento será realizado na linguagem Python, com o auxílio das bibliotecas Pandas para manipulação de dados e Scikit-learn \parencite{scikit-learn} para a implementação dos modelos de Machine Learning, além de Matplotlib/Seaborn para a visualização de dados.
+    \item \textbf{Ferramentas:} O desenvolvimento foi realizado na linguagem Python, com o auxílio das bibliotecas Pandas para manipulação de dados e Scikit-learn \parencite{scikit-learn} para a implementação dos modelos de Machine Learning, além de Matplotlib/Seaborn para a visualização de dados.
 
-    \item \textbf{Tratamento dos Dados:} Será realizada uma análise exploratória para compreender a distribuição e correlação dos dados. Posteriormente, o conjunto de dados será dividido em 80\% para o conjunto de treino e 20\% para o conjunto de teste, utilizando a função \textit{train\_test\_split} da biblioteca Scikit-learn para garantir a separabilidade e a avaliação imparcial do modelo.
+    \item \textbf{Tratamento dos Dados:} Foi realizada uma análise exploratória para compreender a distribuição e correlação dos dados. Posteriormente, o conjunto de dados foi dividido em 80\% para o conjunto de treino e 20\% para o conjunto de teste, utilizando a função \textit{train\_test\_split} da biblioteca Scikit-learn.
 
-    \item \textbf{Modelagem e Avaliação:} Serão treinados e avaliados, a princípio, os algoritmos Random Forest e Support Vector Machine. A performance dos modelos será comparada utilizando as métricas de Acurácia, Matriz de Confusão, Precisão e Recall, a fim de determinar a abordagem mais eficaz para o problema proposto.
+    \item \textbf{Modelagem e Avaliação:} Foram treinados e avaliados os algoritmos Random Forest e Support Vector Machine. A performance dos modelos foi comparada utilizando as métricas de Acurácia, Matriz de Confusão, Precisão e Recall.
 \end{enumerate}
 
 
-\section{Cronograma}
-\label{sec:cronograma}
-O desenvolvimento do projeto está planejado para ser executado ao longo de um semestre letivo, conforme a Tabela \ref{tab:cronograma}.
+\section{Resultados e Discussão}
+\label{sec:resultados}
+% [TODO: Este é o capítulo principal que você deve escrever agora. Use o roteiro abaixo.]
+Nesta seção, são apresentados e analisados os resultados obtidos a partir da execução da metodologia descrita.
 
+\subsection{Desempenho dos Modelos}
+% [TODO: Insira aqui a tabela comparativa com os resultados de Acurácia, Precisão, Recall, etc., para o Random Forest e o SVM.]
+% Exemplo de como criar a tabela:
 \begin{tabela}[hbt]
-    \caption{Cronograma de Execução do Projeto.}
+    \caption{Resultados comparativos de desempenho dos modelos.}
     \centering
-    \begin{tabular}{lccccc}
+    \begin{tabular}{lcc}
     \specialrule{2pt}{0pt}{1pt}
-    \textbf{Atividade} & \textbf{Mês 1} & \textbf{Mês 2} & \textbf{Mês 3} & \textbf{Mês 4} & \textbf{Mês 5} \\
+    \textbf{Métrica} & \textbf{Random Forest} & \textbf{SVM} \\
     \specialrule{1pt}{1pt}{1pt}
-    Revisão Bibliográfica      & X & X &   &   &   \\
-    Análise/Preparação dos Dados &   & X &   &   &   \\
-    Desenvolvimento/Treinamento  &   &   & X & X &   \\
-    Análise dos Resultados/Escrita &   &   &   & X & X \\
-    Revisão Final e Entrega      &   &   &   &   & X \\
+    Acurácia & 98.20\% & 86.35\% \\
+    Precisão (Phishing) & 0.98 & 0.90 \\
+    Recall (Phishing) & 0.98 & 0.82 \\
+    Falsos Positivos & 18 & 181 \\
     \specialrule{2pt}{1pt}{0pt}
     \end{tabular}
-    \label{tab:cronograma}
+    \label{tab:resultados}
+    \XPT Fonte: O autor (2025)
 \end{tabela}
 
+\subsection{Análise Comparativa e Discussão}
+Conforme apresentado na Tabela \ref{tab:resultados}, o modelo Random Forest demonstrou uma superioridade significativa em todas as métricas avaliadas.
 
-\section{Resultados Esperados}
-\label{sec:resultados}
-Espera-se que os modelos de Machine Learning treinados demonstrem alta capacidade preditiva na identificação de websites de phishing. Com base na literatura correlata, como em \textcite{mandadi2022}, projeta-se que ambos os algoritmos, Random Forest e SVM, alcançarão uma acurácia superior a 90\%. O resultado da análise comparativa permitirá indicar qual modelo possui um desempenho mais robusto para este problema específico, considerando não apenas a acurácia geral, mas também a capacidade de minimizar falsos negativos, que representam o maior risco ao usuário.
+% [TODO: Escreva a análise aqui. Use um parágrafo para cada ponto abaixo.]
+% 1. Compare a acurácia geral.
+% 2. Analise a Matriz de Confusão, focando na grande diferença dos Falsos Positivos (18 vs 181) e explique por que esse erro é o mais crítico.
+% 3. Compare o Recall para a classe "Phishing" e explique o que significa o SVM ter deixado 18% das ameaças passarem.
+% 4. Levante a hipótese do porquê o RF foi melhor (robustez, não necessidade de escalonamento de dados, etc.).
 
 
-\section{Considerações Finais}
-\label{sec:conclusoes}
-Ao término deste trabalho, pretende-se entregar não apenas um estudo comparativo, mas também um modelo funcional de classificação que sirva como prova de conceito para ferramentas de segurança mais avançadas. A pesquisa visa contribuir para a comunidade acadêmica com uma análise metodológica clara e resultados reprodutíveis, além de reforçar a importância da aplicação de técnicas de Inteligência Artificial para a solução de problemas práticos e relevantes em segurança da informação.
+\section{Conclusão}
+\label{sec:conclusao}
+% [TODO: Escreva a conclusão com base no roteiro abaixo.]
+
+\subsection{Síntese dos Resultados}
+% [TODO: Resuma em um parágrafo o que foi feito e o principal achado do trabalho. Ex: "Este trabalho desenvolveu e comparou dois modelos... O modelo Random Forest se mostrou a abordagem mais eficaz, alcançando 98.20% de acurácia..."]
+
+\subsection{Limitações do Trabalho}
+% [TODO: Discuta as limitações. A principal é a questão da extração de features simplificada, que foi revelada no teste com a URL do Google. Explique que para uma aplicação real, uma pipeline de extração de features completa seria necessária.]
+
+\subsection{Trabalhos Futuros}
+% [TODO: Sugira os próximos passos. Ex: 1. Desenvolvimento da pipeline completa de extração de features. 2. Otimização dos hiperparâmetros do SVM. 3. Teste com outros algoritmos, como redes neurais.]
+
 
 % --- BIBLIOGRAFIA ---
-\printbibliography[title={REFERÊNCIAS INICIAIS}]
+\printbibliography[title={REFERÊNCIAS}]
 
 \end{document}
