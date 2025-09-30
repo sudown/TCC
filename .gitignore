@@ -48,3 +48,11 @@ coverage.xml
 
 # Jupyter Notebook
 .ipyn
+documents/main.aux
+documents/main.bbl
+documents/main.bbl-SAVE-ERROR
+documents/main.bcf
+documents/main.blg
+documents/main.log
+documents/main.run.xml
+documents/main.synctex.gz

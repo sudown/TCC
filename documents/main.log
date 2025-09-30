@@ -1,7 +1,8 @@
-This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.9.14)  14 SEP 2025 20:26
+This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.9.14)  29 SEP 2025 21:08
  restricted system commands enabled.
-**main.tex
-(./main.tex
+ file:line:error style messages enabled.
+**c:/Users/miros/OneDrive/Documentos/TCC/documents/main
+(c:/Users/miros/OneDrive/Documentos/TCC/documents/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
@@ -1532,12 +1533,12 @@ Package biblatex Info: Automatic encoding selection.
 
 \openout4 = main.bcf
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
-
-No file main.bbl.
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 18.
 Package biblatex Info: Reference segment=0 on input line 18.
 Package hyperref Info: Link coloring OFF on input line 18.
+ (./main.out) (./main.out)
 \@outlinefile=\write5
 
 \openout5 = main.out
@@ -1598,107 +1599,55 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 18.
+<logo-ifpe.png, id=82, 226.8475pt x 271.0125pt>
+File: logo-ifpe.png Graphic file (type png)
+<use logo-ifpe.png>
+Package luatex.def Info: logo-ifpe.png  used on input line 21.
+(luatex.def)             Requested size: 61.45732pt x 73.9766pt.
+ [1
 
-LaTeX Warning: File `logo-ifpe.png' not found on input line 21.
-
-
-! Package luatex.def Error: File `logo-ifpe.png' not found: using draft setting
-.
-
-See the luatex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.21 
-   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-[1
-
-{C:/Users/miros/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-
-LaTeX Warning: Citation 'hastie2009elements' on page 2 undefined on input line 
-44.
-
-
-LaTeX Warning: Citation 'mandadi2022' on page 2 undefined on input line 44.
-
-[2]
-
-LaTeX Warning: Citation 'kaggle_dataset_2022' on page 3 undefined on input line
- 90.
-
-
-LaTeX Warning: Citation 'mandadi2022' on page 3 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'scikit-learn' on page 3 undefined on input line 92.
-
+{C:/Users/miros/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<./logo-ifpe.pn
+g>] [2] [3] [4]
 Package hyperref Info: bookmark level for unknown tabela defaults to 0 on input
- line 109.
+ line 124.
+
 (C:/Users/miros/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-[3]
-
-LaTeX Warning: Reference `tab:resultados' on page 4 undefined on input line 126
-.
-
-
-LaTeX Warning: Empty bibliography on input line 150.
-
-[4] (./main.aux)
+[5]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [6] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  2AF3F3BEBB9DE8933D373A1565833409;3102.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2AF3F3BEBB9DE8933D373A1565833409;3102.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 37792 strings out of 476497
+ 37897 strings out of 476497
  125054,1977958 words of node,token memory allocated
- 755 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 4 glyph, 22
- attribute, 83 glue_spec, 13 attribute_list, 2 write nodes
-   avail lists: 1:4,2:1008,3:296,4:93,5:67,6:56,7:8716,8:4,9:379,10:15,11:1003
- 58936 multiletter control sequences out of 65536+600000
+ 791 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 4 glyph, 28
+ attribute, 83 glue_spec, 16 attribute_list, 2 write, 3 pdf_action nodes
+   avail lists: 1:4,2:877,3:530,4:98,5:86,6:55,7:8672,8:82,9:379,10:74,11:1000
+ 59019 multiletter control sequences out of 65536+600000
  49 fonts using 14761287 bytes
- 99i,11n,104p,1118b,6021s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Windows/Fonts/ariali.ttf><C:/Windows/Fonts/arial.ttf><C:/Windows/Fonts/arial
-bd.ttf><//?/c:/users/miros/appdata/local/programs/miktex/fonts/opentype/public/l
-m/lmmono12-regular.otf>
-Output written on main.pdf (4 pages, 103117 bytes).
+ 99i,11n,104p,1163b,6021s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<//?/c:/users/miros/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
+o12-regular.otf><C:/Windows/Fonts/ariali.ttf><C:/Windows/Fonts/arial.ttf><C:/Win
+dows/Fonts/arialbd.ttf>
+Output written on main.pdf (6 pages, 138192 bytes).
 
-PDF statistics: 80 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 131072)
- 16 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 183 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 131072)
+ 168 words of extra memory for PDF output out of 10000 (max. 100000000)
 

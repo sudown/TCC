@@ -69,7 +69,23 @@ Desenvolver e avaliar a performance de modelos de Machine Learning para a detec�
 \label{sec:fundamentacao}
 % [TODO: Escrever este capítulo com base na sua pesquisa. Use subseções.]
 \subsection{Phishing: Conceitos e Técnicas}
-% [TODO: Explicar o que é phishing, como funciona, tipos de phishing, etc.]
+\label{ssec:phishing_conceitos}
+
+O Phishing constitui uma das modalidades de ataque cibernético mais difundidas e danosas da atualidade, sendo classificado como uma forma de engenharia social. O termo, um homófono da palavra inglesa fishing (pesca), alude de forma análoga à prática de "pescar" informações confidenciais de usuários desatentos. Diferentemente de ataques que exploram vulnerabilidades técnicas em sistemas, o phishing visa o elo mais fraco da cadeia de segurança: o ser humano \parencite{mandadi2022}. O objetivo principal de um ataque de phishing é enganar a vítima para que ela revele, voluntariamente, dados sensíveis como credenciais de acesso (nomes de usuário e senhas), números de cartão de crédito, informações bancárias e dados pessoais.
+
+A eficácia do phishing reside na sua capacidade de explorar gatilhos psicológicos. Os perpetradores do ataque se passam por entidades confiáveis — como bancos, instituições governamentais, empresas de tecnologia ou até mesmo contatos conhecidos da vítima — para criar uma falsa sensação de legitimidade e segurança. As mensagens utilizadas no estratagema frequentemente apelam para um senso de urgência, medo ou curiosidade, compelindo a vítima a agir de forma impulsiva. Frases como "Sua conta foi comprometida, clique aqui para verificar", "Você tem uma encomenda pendente" ou "Sua assinatura expirou" são exemplos clássicos dessa tática.
+
+Os ataques de phishing podem ser categorizados em diversas modalidades, que variam em seu nível de sofisticação e no seu alvo. As técnicas mais comuns são:
+
+\begin{itemize}
+\item \textbf{Phishing por E-mail:} É a forma mais tradicional e massificada. Os atacantes disparam milhões de e-mails genéricos para uma vasta lista de endereços, na esperança de que uma pequena porcentagem das vítimas clique no link malicioso. Esses e-mails costumam imitar a identidade visual de empresas conhecidas, mas geralmente contêm erros sutis de gramática ou de design.
+
+\item \textbf{Spear Phishing (Phishing Direcionado):} Uma evolução muito mais perigosa do ataque tradicional. No Spear Phishing, o atacante realiza uma pesquisa prévia sobre o alvo (uma pessoa ou um grupo específico dentro de uma organização) e personaliza a mensagem com informações relevantes para a vítima, como seu nome, cargo, ou referências a projetos em que está trabalhando. Essa personalização aumenta drasticamente a credibilidade do ataque e, consequentemente, sua taxa de sucesso.
+
+\item \textbf{Whaling (Caça à Baleia):} Uma subcategoria de Spear Phishing que visa especificamente executivos de alto escalão (CEOs, CFOs, etc.), apelidados de "peixes grandes" ou "baleias". Os ataques de Whaling são altamente personalizados e costumam ter como objetivo o roubo de informações estratégicas da empresa ou a autorização de transferências financeiras fraudulentas.
+
+\item \textbf{Smishing e Vishing:} São variações do phishing que utilizam, respectivamente, mensagens de texto (SMS) e chamadas de voz (VoIP). O Smishing frequentemente envolve links para aplicativos maliciosos ou sites falsos, enquanto o Vishing utiliza a interação humana para manipular a vítima e extrair informações por telefone.
+\end{itemize}
 
 \subsection{Machine Learning e Aprendizado Supervisionado}
 % [TODO: Explicar os conceitos básicos de ML, focando em classificação.]
@@ -99,12 +115,11 @@ Este trabalho seguiu uma abordagem de pesquisa quantitativa e experimental. A me
 
 \section{Resultados e Discussão}
 \label{sec:resultados}
-% [TODO: Este é o capítulo principal que você deve escrever agora. Use o roteiro abaixo.]
-Nesta seção, são apresentados e analisados os resultados obtidos a partir da execução da metodologia descrita.
+Nesta seção, são apresentados os resultados quantitativos obtidos a partir da execução da metodologia, detalhando o desempenho individual de cada modelo de Machine Learning. Em seguida, é realizada uma discussão aprofundada, comparando os modelos e interpretando os achados à luz do problema de pesquisa.
 
 \subsection{Desempenho dos Modelos}
-% [TODO: Insira aqui a tabela comparativa com os resultados de Acurácia, Precisão, Recall, etc., para o Random Forest e o SVM.]
-% Exemplo de como criar a tabela:
+Após a etapa de treinamento com 80\% dos dados, os modelos Random Forest e Support Vector Machine (SVM) foram avaliados com o conjunto de teste de 2000 amostras, que não haviam sido expostas aos modelos previamente. O desempenho de cada classificador foi mensurado utilizando métricas padrão de avaliação, cujos resultados estão consolidados na Tabela \ref{tab:resultados}.
+
 \begin{tabela}[hbt]
     \caption{Resultados comparativos de desempenho dos modelos.}
     \centering
@@ -112,25 +127,35 @@ Nesta seção, são apresentados e analisados os resultados obtidos a partir da 
     \specialrule{2pt}{0pt}{1pt}
     \textbf{Métrica} & \textbf{Random Forest} & \textbf{SVM} \\
     \specialrule{1pt}{1pt}{1pt}
-    Acurácia & 98.20\% & 86.35\% \\
-    Precisão (Phishing) & 0.98 & 0.90 \\
-    Recall (Phishing) & 0.98 & 0.82 \\
-    Falsos Positivos & 18 & 181 \\
+    \multicolumn{3}{l}{\textit{Desempenho Geral}} \\
+    Acurácia & \textbf{98.20\%} & 86.35\% \\
+    \specialrule{0.5pt}{1pt}{1pt}
+    \multicolumn{3}{l}{\textit{Análise de Erros (do conjunto de teste com 2000 amostras)}} \\
+    Phishing class. como Legítimo (FP) & \textbf{18} & 181 \\
+    Legítimo class. como Phishing (FN) & \textbf{18} & 92 \\
+    \specialrule{0.5pt}{1pt}{1pt}
+    \multicolumn{3}{l}{\textit{Desempenho na Classe "Phishing"}} \\
+    Precisão & \textbf{0.98} & 0.90 \\
+    Recall & \textbf{0.98} & 0.82 \\
+    F1-Score & \textbf{0.98} & 0.86 \\
     \specialrule{2pt}{1pt}{0pt}
     \end{tabular}
     \label{tab:resultados}
     \XPT Fonte: O autor (2025)
 \end{tabela}
 
+O modelo Random Forest demonstrou um desempenho excepcional, alcançando uma acurácia geral de 98.20\%. A análise de sua matriz de confusão revelou um equilíbrio notável, com apenas 18 erros de Falsos Positivos e 18 erros de Falsos Negativos.
+
+O modelo SVM, por sua vez, obteve uma acurácia de 86.35\%. Embora seja um resultado considerável, é significativamente inferior ao do Random Forest. Sua matriz de confusão indicou um número muito maior de erros, totalizando 181 Falsos Positivos e 92 Falsos Negativos.
+
 \subsection{Análise Comparativa e Discussão}
-Conforme apresentado na Tabela \ref{tab:resultados}, o modelo Random Forest demonstrou uma superioridade significativa em todas as métricas avaliadas.
+A análise comparativa dos resultados apresentados na Tabela \ref{tab:resultados} indica uma clara superioridade do modelo Random Forest sobre o SVM para a tarefa de detecção de phishing neste conjunto de dados. A diferença de quase 12 pontos percentuais na acurácia é o primeiro indicador dessa disparidade.
 
-% [TODO: Escreva a análise aqui. Use um parágrafo para cada ponto abaixo.]
-% 1. Compare a acurácia geral.
-% 2. Analise a Matriz de Confusão, focando na grande diferença dos Falsos Positivos (18 vs 181) e explique por que esse erro é o mais crítico.
-% 3. Compare o Recall para a classe "Phishing" e explique o que significa o SVM ter deixado 18% das ameaças passarem.
-% 4. Levante a hipótese do porquê o RF foi melhor (robustez, não necessidade de escalonamento de dados, etc.).
+O ponto mais crítico da comparação reside na análise dos erros, especificamente os Falsos Positivos — casos em que um site de phishing é incorretamente classificado como legítimo. O SVM cometeu 181 erros deste tipo, 10 vezes mais que os 18 erros do Random Forest. Em uma aplicação de segurança real, essa diferença é inaceitável, pois representa uma falha grave na proteção ao usuário.
 
+A métrica de Recall para a classe "Phishing" reforça essa conclusão. O Random Forest obteve um Recall de 0.98, indicando que foi capaz de identificar 98\% de todos os sites maliciosos presentes no conjunto de teste. Em contrapartida, o SVM alcançou um Recall de 0.82, o que significa que 18\% das ameaças não foram detectadas pelo modelo. A eficácia de uma ferramenta de segurança está diretamente ligada à sua capacidade de minimizar ameaças não detectadas, tornando o Random Forest a escolha mais confiável.
+
+A superioridade do Random Forest pode ser atribuída à sua natureza de \textit{ensemble}, que combina múltiplas árvores de decisão para criar um modelo mais robusto e menos propenso a superajuste (\textit{overfitting}). Por outro lado, o desempenho inferior do SVM pode estar relacionado à sua sensibilidade a dados não escalonados e à necessidade de uma otimização de hiperparâmetros mais complexa, como documentado por \textcite{hastie2009elements}. O resultado de 98.20\% obtido pelo Random Forest é, ainda, consistente com os achados de \textcite{mandadi2022}, que também apontam o algoritmo como uma abordagem de alta performance para esta tarefa.
 
 \section{Conclusão}
 \label{sec:conclusao}
